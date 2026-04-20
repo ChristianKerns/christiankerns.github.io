@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects &mdash; Christian Kerns</title>
+  <meta name="description" content="Data Engineering Projects by Christian Kerns">
+  <meta name="author" content="Christian Kerns">
+  
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+      <h1><a href="index.html">Christian Kerns</a></h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+      </ul>
+    </nav>
+    <main>
+      
+      <h2>Featured Project: Eco Essentials Data Warehousing</h2>
+      <p>
+        <strong>Tech Stack:</strong> Fivetran, Snowflake, dbt, SQL, LucidChart
+      </p>
+      <p>
+        The objective of this project was to design and build an Enterprise Data Warehouse that allows analysts to seamlessly
+        correlate marketing activity (such as email opens or clicks) with subsequent purchases in the sales system.
+      </p>
+
+      <h3>1. Data Modeling & Architecture</h3>
+      <p>
+        I drafted a bus matrix to outline key business processes (Sales and Marketing Email Conversions) and designed a star 
+        schema. By identifying conformed dimensions (<code>dim_customer</code> and <code>dim_date</code>), I successfully 
+        combined the separate schemas into a single enterprise data warehouse.
+      </p>
+      <img src="images/schema.png">
+
+      <h3>2. Extract, Load, and Transform (ELT)</h3>
+      <p>
+        I utilized <strong>Fivetran</strong> to sync data from external sources (Amazon RDS for PostgreSQL and Amazon S3) into 
+        Snowflake. From there, I leveraged <strong>dbt</strong> to define the source data and transform the raw tables into clean 
+        dimension and fact tables, running automated tests to ensure data integrity.
+      </p>
+      <img src="images/dbt-logs.png">
+
+      <h3>3. Business Outcomes & Visualization</h3>
+      <p>
+        With the data warehouse populated in <strong>Snowflake</strong>, I wrote complex SQL queries to answer critical business 
+        questions and generate visual dashboards. These visualizations tracked sales trends over time, email funnel engagement, 
+        and overall campaign performance to determine which promotions generated the highest revenue.
+      </p>
+      <img src="images/snowflake-charts.png">
+
+      <br><br>
+      <h4><a href="documents/Eco_Essentials_Project.pdf" target="_blank" style="color: #2980B9; text-decoration: underline;">
+        View the Full Project Documentation (PDF)</a></h4>
+      
+    </main>
+    <footer>
+      Copyright &copy; 2026 Christian Kerns<br />
+      <a href="mailto:christiankerns22@gmail.com">christiankerns22@gmail.com</a>
+      <div>
+        <p id="dateupdate"></p>
+        <script src="js/dateupdate.js"></script>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>
